@@ -37,7 +37,7 @@ const  App = () => {
       <main>
         <InputBox onSubmit={addTodo}/>
         <>{noItems && <p>Nothing to see yet... Add a task in the field above!</p>}</>
-        <TodoCard userInput={list}/>
+        <TodoCard userInput={list} complete={complete}/>
         
       </main>
     </div>
