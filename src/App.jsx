@@ -30,18 +30,34 @@ const  App = () => {
     }
   }
 
+  const completeTodo = (id) => {
+    let updatedTodos = list.map(todo => {
+      if (todo.id === id) {
+        todo.complete = !todo.complete;
+      }
+      return todo;
+    });
+    setList(updatedTodos);
+  };
+
+  const handleReset = () => {
+    setList([])
+    setNoItems(true)
+  }
+
   
 
   return (
     <div className="App">
       <nav>
         <h1>My Todos</h1>
+        <ResetButton reset={handleReset}/>
         
       </nav>
       <main>
         <InputBox onSubmit={addTodo}/>
         <>{noItems && <p>Nothing to see yet... Add a task in the field above!</p>}</>
-        <TodoCard userInput={list} deleteTodo={deleteTodo}/>
+        <TodoCard userInput={list} deleteTodo={deleteTodo} completeTodo={completeTodo}/>
         
       </main>
     </div>
