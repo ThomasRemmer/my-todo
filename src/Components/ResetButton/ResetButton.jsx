@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const ResetButton = ({reset}) => {
-  return (
-    <button onClick={reset}>Reset</button>
-  )
-}
+const ResetButton = ({ reset }) => {
+  return <button onClick={reset}>Reset</button>;
+};
 
-export default ResetButton
+export default ResetButton;
