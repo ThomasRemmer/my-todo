@@ -9,9 +9,15 @@ function App() {
   
   const addTodo = (input => {
 
-    if(!input.text) {
+    if(input.text === "") {
       alert("please enter a todo")
+      return;
     }
+
+    const newTodo = [input, ...list]
+
+    setList(newTodo)
+    console.log(input, ...list)
   })
 
   

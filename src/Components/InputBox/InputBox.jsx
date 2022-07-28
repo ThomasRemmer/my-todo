@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const InputBox = () => {
+const InputBox = (props) => {
     const [input, setInput] = useState("")
     
 
@@ -11,7 +11,9 @@ const InputBox = () => {
     const handleSubmit = event => {
         event.preventDefault();
 
-        const task = event.target.value;
+        props.onSubmit({
+            text:input
+        })
 
         setInput("")
     }
