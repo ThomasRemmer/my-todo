@@ -1,4 +1,5 @@
 import {useState} from "react";
+import { v4 as uuid } from 'uuid'
 
 const InputBox = (props) => {
     const [input, setInput] = useState("")
@@ -12,7 +13,8 @@ const InputBox = (props) => {
         event.preventDefault();
 
         props.onSubmit({
-            text:input
+            text:input,
+            id: uuid()
         })
 
         setInput("")

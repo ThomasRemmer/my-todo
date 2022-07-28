@@ -18,12 +18,16 @@ const  App = () => {
     const newTodo = [input, ...list]
 
     setList(newTodo)
-    console.log(input, ...list)
+
     setNoItems(false)
   })
 
-  const complete = () => {
-
+  const deleteTodo = (id) => {
+    const delArr = [...list].filter(todo => todo.id !== id)
+    setList(delArr)
+    if (list.length === 1) {
+      setNoItems(true)
+    }
   }
 
   
@@ -37,7 +41,7 @@ const  App = () => {
       <main>
         <InputBox onSubmit={addTodo}/>
         <>{noItems && <p>Nothing to see yet... Add a task in the field above!</p>}</>
-        <TodoCard userInput={list} complete={complete}/>
+        <TodoCard userInput={list} deleteTodo={deleteTodo}/>
         
       </main>
     </div>
