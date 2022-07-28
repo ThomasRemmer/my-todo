@@ -8,19 +8,16 @@ const  App = () => {
   const [list, setList] = useState([])
   const [noItems, setNoItems] = useState(true)
   
-  const addTodo = (input => {
-
+  const addTodo = (input) => {
     if(input.text === "") {
       alert("please enter a todo")
       return;
     }
-
     const newTodo = [input, ...list]
-
+    console.log(list.push(input))
     setList(newTodo)
-
     setNoItems(false)
-  })
+  }
 
   const deleteTodo = (id) => {
     const delArr = [...list].filter(todo => todo.id !== id)

@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 .App {
   text-align: center;
-  margin: 10px;
+  margin: 15px;
+  font-family: 'Jost', sans-serif;
 }
 
-
+nav {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
