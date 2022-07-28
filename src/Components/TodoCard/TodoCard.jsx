@@ -1,9 +1,23 @@
-import {useSate} from 'react'
+import {useState} from 'react'
+import InputBox from "../InputBox/InputBox"
 
-function TodoCard() {
+const TodoCard =  ({userInput}) => {
+  const [edit, setEdit] = useState({
+    id: null,
+    value: ""
+  });
+
+  const cardJSX = userInput.map((todo, index) => (
+    <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
+        <p key={todo.id}>{todo.text}</p>
+    </div>
+  ))
+
+
   return (
-    <div>TodoCard</div>
+    <div className='card-container'>{cardJSX}</div>
   )
+    
 }
 
 export default TodoCard
