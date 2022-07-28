@@ -18,6 +18,7 @@ function App() {
       </nav>
       <main>
         <InputBox />
+        <CardContainer />
         
       </main>
     </div>
