@@ -14,7 +14,6 @@ const  App = () => {
       return;
     }
     const newTodo = [input, ...list]
-    console.log(list.push(input))
     setList(newTodo)
     setNoItems(false)
   }
