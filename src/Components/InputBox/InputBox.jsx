@@ -13,10 +13,7 @@ const InputBox = () => {
 
         const task = event.target.value;
 
-        if (task == "") {
-            alert("please enter a todo")
-            return;
-        }
+        setInput("")
     }
 
     return (
